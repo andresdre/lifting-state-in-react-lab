@@ -36,8 +36,8 @@ const App = () => {
   };
 
   return (
-    <main style={{ display: "flex", justifyContent: "space-around" }}>
-      <section>
+    <main style={{ display: "flex", justifyContent: "space-around", alignItems: "flex-start" }}>
+      <section style={{ width: "40%"}}>
         <h2>Ingredients</h2>
         <IngredientList 
           ingredients={availableIngredients}
@@ -45,7 +45,7 @@ const App = () => {
         />
       </section>
       
-      <section>
+      <section style={{ width: "40%"}}>
         <h2>Burger Stacker</h2>
         <BurgerStack 
           ingredients={stack} 

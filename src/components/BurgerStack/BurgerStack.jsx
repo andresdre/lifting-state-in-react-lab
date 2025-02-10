@@ -1,22 +1,24 @@
 // src/components/BurgerStack/BurgerStack.jsx
+import Ingredient from "../Ingredient/Ingredient";
 
 const BurgerStack = ({ ingredients, handleRemoveIngredient }) => {
-    return (
-        <div>
-            {ingredients.length === 0 ? (
-                <p>No Ingredients</p>
-            ) : (
-            <ul>
-                {ingredients.map((ingredients, index) => (
-                    <li key={index} style={{ backgroundColor: ingredients.color}}>
-                        {ingredients.name}
-                        <button onClick={() => handleRemoveIngredient(index)}>X</button>
-                    </li>
-                ))}
-            </ul>
-            )}
-        </div>
-    );
+    console.log("Stack ingredients:", ingredients);
+  return (
+    <ul>
+      {ingredients.length === 0 ? (
+        <p>No Ingredients</p>
+      ) : (
+        ingredients.map((ingredient, index) => (
+          <Ingredient 
+            key={index} 
+            ingredient={ingredient} 
+            onClick={() => handleRemoveIngredient(index)}
+            isInStack={true} 
+          />
+        ))
+      )}
+    </ul>
+  );
 };
 
 export default BurgerStack;
